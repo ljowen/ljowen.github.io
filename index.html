@@ -1,6 +1,73 @@
 <html>
-<body>
-  Hello world
-  </body>
+<head>
+<style type="text/css">
+body { /* can also be whatever container */
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+#countdown {
+color: white;
+        padding-top: 115px;
+        text-align: center;
+}
 
+        div.image {max-width: 256px;max-height: 256px;
+        background-size: contain;
+        width: 500px;
+        height: 500px;
+background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUwIDUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MCA1MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxwYXRoIHN0eWxlPSJmaWxsOiNENzVBNEE7IiBkPSJNMjQuODUsMTAuMTI2YzIuMDE4LTQuNzgzLDYuNjI4LTguMTI1LDExLjk5LTguMTI1YzcuMjIzLDAsMTIuNDI1LDYuMTc5LDEzLjA3OSwxMy41NDMgIGMwLDAsMC4zNTMsMS44MjgtMC40MjQsNS4xMTljLTEuMDU4LDQuNDgyLTMuNTQ1LDguNDY0LTYuODk4LDExLjUwM0wyNC44NSw0OEw3LjQwMiwzMi4xNjVjLTMuMzUzLTMuMDM4LTUuODQtNy4wMjEtNi44OTgtMTEuNTAzICBjLTAuNzc3LTMuMjkxLTAuNDI0LTUuMTE5LTAuNDI0LTUuMTE5QzAuNzM0LDguMTc5LDUuOTM2LDIsMTMuMTU5LDJDMTguNTIyLDIsMjIuODMyLDUuMzQzLDI0Ljg1LDEwLjEyNnoiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==)}</style>
+</head>
+<body>
+<script>
+
+    CountDownTimer('2018-05-02 5:40 PM', 'countdown');
+
+    function zeroPad(n) {
+        return n >= 10 ? n : '0'+n 
+        }
+
+    function CountDownTimer(dt, id)
+    {
+        var end = new Date(dt);
+        console.log(end);
+
+        var _second = 1000;
+        var _minute = _second * 60;
+        var _hour = _minute * 60;
+        var _day = _hour * 24;
+        var timer;
+
+        function showRemaining() {
+            var now = new Date();
+            var distance = end - now;
+            if (distance < 0) {
+
+                clearInterval(timer);
+                document.getElementById(id).innerHTML = 'EXPIRED!';
+
+                return;
+            }
+            var days = Math.floor(distance / _day);
+            var hours = Math.floor((distance % _day) / _hour);
+            var minutes = Math.floor((distance % _hour) / _minute);
+            var seconds = Math.floor((distance % _minute) / _second);
+
+            document.getElementById(id).innerHTML = zeroPad(days) + ':';
+            document.getElementById(id).innerHTML += zeroPad(hours) + ':';
+            document.getElementById(id).innerHTML += zeroPad(minutes) + ':';
+            document.getElementById(id).innerHTML += zeroPad(seconds);
+        }
+
+        timer = setInterval(showRemaining, 1000);
+    }
+
+</script>
+<div class="image">
+<div style="text-align: center" id="countdown"></div>
+</div>
+</body>
 </html>
