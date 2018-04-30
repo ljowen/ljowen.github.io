@@ -14,7 +14,6 @@ color: white;
         padding-top: 115px;
         text-align: center;
 }
-
         div.image {max-width: 256px;max-height: 256px;
         background-size: contain;
         width: 500px;
@@ -23,48 +22,41 @@ background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiB
 </head>
 <body>
 <script>
-
     CountDownTimer('2018-05-02 5:40 PM', 'countdown');
-
     function zeroPad(n) {
         return n >= 10 ? n : '0'+n 
         }
-
     function CountDownTimer(dt, id)
     {
         var end = new Date(dt);
         console.log(end);
-
         var _second = 1000;
         var _minute = _second * 60;
         var _hour = _minute * 60;
         var _day = _hour * 24;
         var timer;
-
         function showRemaining() {
             var now = new Date();
             var distance = end - now;
             if (distance < 0) {
-
                 clearInterval(timer);
-                document.getElementById(id).innerHTML = 'EXPIRED!';
-
+                document.getElementById(id).innerHTML = 'I love you Maddy...';
+                while(true) {
+                    confirm('I love you Madeleine');
+                }
                 return;
             }
             var days = Math.floor(distance / _day);
             var hours = Math.floor((distance % _day) / _hour);
             var minutes = Math.floor((distance % _hour) / _minute);
             var seconds = Math.floor((distance % _minute) / _second);
-
             document.getElementById(id).innerHTML = zeroPad(days) + ':';
             document.getElementById(id).innerHTML += zeroPad(hours) + ':';
             document.getElementById(id).innerHTML += zeroPad(minutes) + ':';
             document.getElementById(id).innerHTML += zeroPad(seconds);
         }
-
         timer = setInterval(showRemaining, 1000);
     }
-
 </script>
 <div class="image">
 <div style="text-align: center" id="countdown"></div>
