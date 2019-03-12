@@ -1,62 +1,59 @@
 <html>
-<head>
-<style type="text/css">
-body { /* can also be whatever container */
-  display: -webkit-flex;
-  display: flex;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-#countdown {
-color: white;
-        padding-top: 115px;
-        text-align: center;
-}
-        div.image {max-width: 256px;max-height: 256px;
-        background-size: contain;
-        width: 500px;
-        height: 500px;
-background-image: url(data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iQ2FwYV8xIiB4PSIwcHgiIHk9IjBweCIgdmlld0JveD0iMCAwIDUwIDUwIiBzdHlsZT0iZW5hYmxlLWJhY2tncm91bmQ6bmV3IDAgMCA1MCA1MDsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+CjxwYXRoIHN0eWxlPSJmaWxsOiNENzVBNEE7IiBkPSJNMjQuODUsMTAuMTI2YzIuMDE4LTQuNzgzLDYuNjI4LTguMTI1LDExLjk5LTguMTI1YzcuMjIzLDAsMTIuNDI1LDYuMTc5LDEzLjA3OSwxMy41NDMgIGMwLDAsMC4zNTMsMS44MjgtMC40MjQsNS4xMTljLTEuMDU4LDQuNDgyLTMuNTQ1LDguNDY0LTYuODk4LDExLjUwM0wyNC44NSw0OEw3LjQwMiwzMi4xNjVjLTMuMzUzLTMuMDM4LTUuODQtNy4wMjEtNi44OTgtMTEuNTAzICBjLTAuNzc3LTMuMjkxLTAuNDI0LTUuMTE5LTAuNDI0LTUuMTE5QzAuNzM0LDguMTc5LDUuOTM2LDIsMTMuMTU5LDJDMTguNTIyLDIsMjIuODMyLDUuMzQzLDI0Ljg1LDEwLjEyNnoiLz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPGc+CjwvZz4KPC9zdmc+Cg==)}</style>
-</head>
-<body>
-<script>
-    CountDownTimer('2018-05-02 5:40 PM', 'countdown');
-    function zeroPad(n) {
-        return n >= 10 ? n : '0'+n 
-        }
-    function CountDownTimer(dt, id)
-    {
-        var end = new Date(dt);
-        console.log(end);
-        var _second = 1000;
-        var _minute = _second * 60;
-        var _hour = _minute * 60;
-        var _day = _hour * 24;
-        var timer;
-        function showRemaining() {
-            var now = new Date();
-            var distance = end - now;
-            if (distance < 0) {
-                clearInterval(timer);
-                document.getElementById(id).innerHTML = 'I love you Maddy...';
-                return;
+    <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136082368-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-136082368-1', { 'optimize_id': 'GTM-NV9R4S3'});
+        </script>
+
+        <!-- Google Tag Manager -->
+        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-KFC4ZST');</script>
+        <!-- End Google Tag Manager -->
+
+        <script>
+            function randI(min, max) { return Math.floor(Math.random() * (max - min) ) + min; }
+            function getRStyle() {
+                let top = randI(20, window.innerHeight - 20); 
+                let left = randI(110, window.innerWidth - 110);
+                return `position: fixed; top: ${top}; left: ${left}; background: red;`
             }
-            var days = Math.floor(distance / _day);
-            var hours = Math.floor((distance % _day) / _hour);
-            var minutes = Math.floor((distance % _hour) / _minute);
-            var seconds = Math.floor((distance % _minute) / _second);
-            document.getElementById(id).innerHTML = zeroPad(days) + ':';
-            document.getElementById(id).innerHTML += zeroPad(hours) + ':';
-            document.getElementById(id).innerHTML += zeroPad(minutes) + ':';
-            document.getElementById(id).innerHTML += zeroPad(seconds);
-        }
-        timer = setInterval(showRemaining, 1000);
-    }
-</script>
-<div class="image">
-<div style="text-align: center" id="countdown"></div>
-</div>
-</body>
+            function red() { console.log('r'); }
+            function blue() { console.log('b'); }
+            function optimizeCallback(value, name) {
+                console.log(`val: ${value}, name ${name}`);
+                if(value == 1) {
+                    const rb = document.getElementById('red');
+                    const bb = document.getElementById('blue');
+                    bb.style= "background:blue; width: 100%; height: 100%";
+                    rb.style = getRStyle();
+                    rb.onmouseenter = function() { 
+                        setTimeout(function() { 
+                            rb.style = getRStyle();
+                        }, 400);
+                    }
+                }
+            }
+gtag('event', 'optimize.callback', {
+    callback: optimizeCallback
+});
+        </script>
+    </head>
+    <body>
+        <!-- Google Tag Manager (noscript) -->
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFC4ZST"
+                          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <!-- End Google Tag Manager (noscript) -->
+
+        <button id="red" onclick="red()"  style="background-color: red"> Take the Red Pill </button>
+
+        <button id="blue" onclick="blue()" style="background-color: blue"> Take the Blue Pill </button>
+    </body>
 </html>
