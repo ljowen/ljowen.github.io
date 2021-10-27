@@ -1,59 +1,8 @@
 <html>
     <head>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136082368-1"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date());
-
-gtag('config', 'UA-136082368-1', { 'optimize_id': 'GTM-NV9R4S3'});
-        </script>
-
-        <!-- Google Tag Manager -->
-        <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-                j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','GTM-KFC4ZST');</script>
-        <!-- End Google Tag Manager -->
-
-        <script>
-            function randI(min, max) { return Math.floor(Math.random() * (max - min) ) + min; }
-            function getRStyle() {
-                let top = randI(20, window.innerHeight - 20); 
-                let left = randI(110, window.innerWidth - 110);
-                return `position: fixed; top: ${top}; left: ${left}; background: red;`
-            }
-            function red() { console.log('r'); }
-            function blue() { console.log('b'); }
-            function optimizeCallback(value, name) {
-                console.log(`val: ${value}, name ${name}`);
-                if(value == 1) {
-                    const rb = document.getElementById('red');
-                    const bb = document.getElementById('blue');
-                    bb.style= "background:blue; width: 100%; height: 100%";
-                    rb.style = getRStyle();
-                    rb.onmouseenter = function() { 
-                        setTimeout(function() { 
-                            rb.style = getRStyle();
-                        }, 400);
-                    }
-                }
-            }
-gtag('event', 'optimize.callback', {
-    callback: optimizeCallback
-});
-        </script>
+        <script defer data-domain="ljowen.github.io" src="https://plausible.io/js/plausible.js"></script>
     </head>
     <body>
-        <!-- Google Tag Manager (noscript) -->
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KFC4ZST"
-                          height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-        <!-- End Google Tag Manager (noscript) -->
-
-        <button id="red" onclick="red()"  style="background-color: red"> Take the Red Pill </button>
-
-        <button id="blue" onclick="blue()" style="background-color: blue"> Take the Blue Pill </button>
+            wat
     </body>
 </html>
